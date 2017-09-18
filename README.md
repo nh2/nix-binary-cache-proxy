@@ -39,3 +39,8 @@ nix.binaryCaches = [
 ```
 
 For non-NixOS nix users, set the `binary-caches` option in `/etc/nix/nix.conf` as described in the last paragraphs of [this manual section](https://nixos.org/nix/manual/#ssec-binary-cache-substituter).
+
+
+#### Acknowledgements
+
+Thanks to [@cleverca22](https://github.com/cleverca22/) for lots of help with this!
