@@ -40,9 +40,7 @@ in
     ];
 
     nix.binaryCaches = [ "http://nixos-cache.example.com/" "http://cache.nixos.org/" ];
-    # Key generated with `nix-store --generate-binary-cache-key`
-    nix.binaryCachePublicKeys = [ (builtins.readFile ./secrets/example-nix-binary-cache-signing-key-public) ];
-
+    
     services.nginx = {
       enable = true;
       appendHttpConfig = ''
