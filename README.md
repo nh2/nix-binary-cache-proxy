@@ -23,8 +23,10 @@ Then
 Simply follow the AWS steps, but remove all AWS/Route53 related `deployment.*` entries and use
 
 ```nix
-deployment.targetEnv = "none";`
-deployment.targetHost = "1.2.3.4"; # your server's IP you can SSH into
+{
+  deployment.targetEnv = "none";
+  deployment.targetHost = "1.2.3.4"; # your server's IP you can SSH into
+}
 ```
 
 ## Use
@@ -32,10 +34,12 @@ deployment.targetHost = "1.2.3.4"; # your server's IP you can SSH into
 Simply point your NixOS boxes at it with:
 
 ```nix
-nix.binaryCaches = [
-  "http://nixos-cache.example.com/"
-  "http://cache.nixos.org/" # include this line if you want it to fallback to upstream if your cache is down
-];
+{
+  nix.binaryCaches = [
+    "http://nixos-cache.example.com/"
+    "http://cache.nixos.org/" # include this line if you want it to fallback to upstream if your cache is down
+  ];
+}
 ```
 
 For non-NixOS nix users, set the `binary-caches` option in `/etc/nix/nix.conf` as described in the last paragraphs of [this manual section](https://nixos.org/nix/manual/#ssec-binary-cache-substituter).
