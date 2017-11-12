@@ -44,6 +44,9 @@ Simply point your NixOS boxes at it with:
 
 For non-NixOS nix users, set the `binary-caches` option in `/etc/nix/nix.conf` as described in the last paragraphs of [this manual section](https://nixos.org/nix/manual/#ssec-binary-cache-substituter).
 
+Note we're using plain `http` here, which is safe because nix packages are signed with public-key cryptography.
+If you care to have a bit more privacy (a man-in-the-middle not trivially observing what packages are downloaded; but most people don't care if somebody knows what publicly available packages they install) and can tolerate more roundtrips for connection initialisation (which nix < 1.12 does for each package), use `https` here instead.
+
 
 #### Acknowledgements
 
